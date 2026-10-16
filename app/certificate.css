@@ -1,0 +1,558 @@
+
+/* ==========================================
+   CREDENTIAL ARCHIVE
+   Dark navy / purple / cyan
+========================================== */
+
+.credential-section,
+.credential-section * {
+  box-sizing: border-box;
+}
+
+.credential-section {
+  position: relative;
+  overflow: hidden;
+  padding: 100px clamp(20px, 5vw, 75px) 75px;
+  color: #f5f3ff;
+  background:
+    radial-gradient(
+      ellipse at 50% 60%,
+      rgba(57, 65, 184, 0.15),
+      transparent 50%
+    ),
+    #0b0d20;
+}
+
+.credential-container {
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+/* Heading */
+
+.credential-heading {
+  max-width: 700px;
+  margin: 0 auto 45px;
+  text-align: center;
+}
+
+.credential-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  color: #67e8f9;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+}
+
+.credential-dot {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 7px;
+  border-radius: 50%;
+  background: #67e8a5;
+  box-shadow: 0 0 12px #67e8a5;
+}
+
+.credential-heading h2 {
+  margin: 0;
+  color: #f8f7ff;
+  font-size: clamp(34px, 4.5vw, 57px);
+  font-weight: 800;
+  letter-spacing: -1.8px;
+  line-height: 1.2;
+}
+
+.credential-heading h2 span {
+  color: #a78bfa;
+  background: linear-gradient(90deg, #a78bfa, #67e8f9);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.credential-heading p {
+  max-width: 550px;
+  margin: 18px auto 0;
+  color: #aeb3d5;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+/* Main workspace */
+
+.credential-workspace {
+  display: grid;
+  grid-template-columns: 245px minmax(0, 1fr);
+  gap: 20px;
+  align-items: stretch;
+}
+
+/* Sidebar */
+
+.credential-sidebar,
+.credential-records {
+  min-width: 0;
+  border: 1px solid rgba(133, 145, 224, 0.22);
+  border-radius: 15px;
+  background: rgba(17, 20, 47, 0.78);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+.credential-sidebar {
+  display: flex;
+  flex-direction: column;
+  padding: 19px 15px;
+}
+
+.credential-sidebar-top,
+.credential-records-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  color: #858dbd;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+}
+
+.credential-sidebar-top {
+  padding: 0 3px 17px;
+  border-bottom: 1px solid rgba(133, 145, 224, 0.16);
+}
+
+.credential-sidebar-top span:last-child {
+  color: #67e8f9;
+}
+
+.credential-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding-top: 17px;
+}
+
+.credential-filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px 11px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  color: #aeb3d5;
+  background: transparent;
+  font-family: inherit;
+  font-size: 12px;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.credential-filter span:last-child {
+  color: #737ba7;
+  font-family: monospace;
+  font-size: 10px;
+}
+
+.credential-filter:hover {
+  color: #fff;
+  background: rgba(130, 111, 255, 0.08);
+}
+
+.credential-filter.active {
+  border-color: rgba(140, 126, 255, 0.32);
+  color: #fff;
+  background: linear-gradient(
+    100deg,
+    rgba(117, 94, 255, 0.2),
+    rgba(48, 113, 235, 0.08)
+  );
+  box-shadow: inset 3px 0 #8b7cff;
+}
+
+.credential-filter.active span:last-child {
+  color: #67e8f9;
+}
+
+.credential-sidebar-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: auto;
+  padding: 18px 4px 0;
+  border-top: 1px solid rgba(133, 145, 224, 0.16);
+}
+
+.credential-note-icon {
+  color: #a78bfa;
+  font-size: 20px;
+}
+
+.credential-sidebar-note p {
+  margin: 2px 0 0;
+  color: #939abe;
+  font-size: 10px;
+  line-height: 1.8;
+}
+
+/* Record list */
+
+.credential-records {
+  padding: 19px;
+}
+
+.credential-records-top {
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(133, 145, 224, 0.16);
+}
+
+.credential-records-top span:last-child {
+  color: #67e8f9;
+  font-size: 8px;
+}
+
+.credential-record {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  width: 100%;
+  min-width: 0;
+  padding: 17px 8px;
+  border: 0;
+  border-bottom: 1px solid rgba(133, 145, 224, 0.12);
+  border-radius: 7px;
+  color: #f5f3ff;
+  background: transparent;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+
+.credential-record:last-child {
+  border-bottom-color: transparent;
+}
+
+.credential-record:hover {
+  background: rgba(139, 124, 255, 0.07);
+}
+
+.credential-record.selected {
+  background: linear-gradient(
+    90deg,
+    rgba(119, 99, 255, 0.15),
+    rgba(103, 232, 249, 0.035)
+  );
+  box-shadow: inset 2px 0 #8b7cff;
+}
+
+.credential-record-number {
+  flex: 0 0 24px;
+  color: #737ba7;
+  font-family: monospace;
+  font-size: 10px;
+}
+
+.credential-record-symbol {
+  display: grid;
+  place-items: center;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(167, 139, 250, 0.45);
+  border-radius: 11px;
+  color: #a78bfa;
+  background: rgba(126, 99, 255, 0.1);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.credential-record.selected .credential-record-symbol {
+  border-color: #67e8f9;
+  color: #67e8f9;
+  box-shadow: 0 0 15px rgba(103, 232, 249, 0.12);
+}
+
+.credential-record-copy {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.credential-record-name {
+  color: #eeedff;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+.credential-record-org {
+  color: #939abe;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.credential-record-arrow {
+  flex: 0 0 auto;
+  color: #7e8ac9;
+  font-size: 17px;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.credential-record.selected .credential-record-arrow {
+  color: #67e8f9;
+  transform: translate(2px, -2px);
+}
+
+/* Selected credential detail */
+
+.credential-detail {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+  padding: 23px;
+  border: 1px solid rgba(139, 124, 255, 0.36);
+  border-radius: 14px;
+  background:
+    radial-gradient(
+      ellipse at 0% 50%,
+      rgba(109, 86, 255, 0.17),
+      transparent 65%
+    ),
+    rgba(15, 19, 44, 0.9);
+  box-shadow: 0 0 30px rgba(88, 78, 255, 0.07);
+}
+
+.credential-detail-symbol {
+  display: grid;
+  place-items: center;
+  flex: 0 0 68px;
+  width: 68px;
+  height: 68px;
+  border: 1px solid rgba(103, 232, 249, 0.6);
+  border-radius: 15px;
+  color: #67e8f9;
+  background: rgba(103, 232, 249, 0.06);
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.credential-detail-copy {
+  flex: 1;
+  min-width: 0;
+}
+
+.credential-detail-label {
+  color: #67e8f9;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  line-height: 1.8;
+}
+
+.credential-detail h3 {
+  margin: 8px 0 6px;
+  color: #fff;
+  font-size: clamp(15px, 2vw, 20px);
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.credential-detail p {
+  margin: 0;
+  color: #aeb3d5;
+  font-size: 12px;
+}
+
+.credential-detail-category {
+  flex: 0 0 auto;
+  padding: 7px 10px;
+  border: 1px solid rgba(167, 139, 250, 0.3);
+  border-radius: 7px;
+  color: #c4b5fd;
+  background: rgba(167, 139, 250, 0.06);
+  font-size: 10px;
+}
+
+/* Bottom archive label */
+
+.credential-footer-line {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 25px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(133, 145, 224, 0.17);
+  color: #777fa7;
+  font-family: monospace;
+  font-size: 9px;
+  letter-spacing: 1.2px;
+}
+
+.credential-footer-star {
+  color: #67e8f9;
+}
+
+/* Tablet */
+
+@media (max-width: 850px) {
+  .credential-section {
+    padding: 75px 24px 55px;
+  }
+
+  .credential-workspace {
+    grid-template-columns: 190px minmax(0, 1fr);
+    gap: 13px;
+  }
+
+  .credential-sidebar {
+    padding: 15px 10px;
+  }
+
+  .credential-records {
+    padding: 13px;
+  }
+
+  .credential-record {
+    gap: 8px;
+    padding: 14px 5px;
+  }
+
+  .credential-record-symbol {
+    flex-basis: 35px;
+    width: 35px;
+    height: 35px;
+    font-size: 10px;
+  }
+
+  .credential-record-number {
+    flex-basis: 19px;
+    font-size: 9px;
+  }
+
+  .credential-record-name {
+    font-size: 11px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .credential-section {
+    padding: 65px 17px 40px;
+  }
+
+  .credential-heading {
+    margin-bottom: 30px;
+  }
+
+  .credential-heading h2 {
+    font-size: clamp(31px, 8vw, 42px);
+    letter-spacing: -1px;
+  }
+
+  .credential-heading p {
+    font-size: 12px;
+  }
+
+  .credential-workspace {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .credential-sidebar {
+    padding: 14px;
+  }
+
+  .credential-filters {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 7px;
+    padding-top: 13px;
+  }
+
+  .credential-filter {
+    width: auto;
+    flex: 1 1 auto;
+    justify-content: center;
+    gap: 7px;
+    padding: 10px;
+    font-size: 10px;
+  }
+
+  .credential-sidebar-note {
+    display: none;
+  }
+
+  .credential-records {
+    padding: 12px;
+  }
+
+  .credential-records-top {
+    gap: 7px;
+    font-size: 8px;
+  }
+
+  .credential-records-top span:last-child {
+    font-size: 7px;
+  }
+
+  .credential-record {
+    gap: 9px;
+    padding: 14px 3px;
+  }
+
+  .credential-record-symbol {
+    flex-basis: 37px;
+    width: 37px;
+    height: 37px;
+  }
+
+  .credential-record-name {
+    font-size: 11px;
+  }
+
+  .credential-detail {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 13px;
+    padding: 16px;
+  }
+
+  .credential-detail-symbol {
+    flex-basis: 50px;
+    width: 50px;
+    height: 50px;
+    font-size: 16px;
+  }
+
+  .credential-detail-copy {
+    flex-basis: calc(100% - 65px);
+  }
+
+  .credential-detail-category {
+    margin-left: 63px;
+  }
+
+  .credential-footer-line {
+    font-size: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .credential-filter,
+  .credential-record,
+  .credential-record-arrow {
+    transition: none;
+  }
+}
